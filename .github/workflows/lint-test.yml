@@ -1,0 +1,14 @@
+# .github/workflows/invalid-workflow.yml
+name: Invalid Workflow
+on: [push
+# 意図的に構文エラーを入れています
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    step:  # steps ではなく step と誤記
+      - uses: actions/checkout@v4
+      - names: Invalid Step  # name ではなく names と誤記
+        run: echo "Hello World"
+    
+    timeout-minutes: text  # 数値ではなくテキストを指定（不正な値）
