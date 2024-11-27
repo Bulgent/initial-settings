@@ -1,0 +1,16 @@
+name: Trigger Dependabot
+on:
+  workflow_dispatch:  # 手動トリガー用
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Dependabot
+        run: |
+          gh api \
+            --method POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            /repos/${{ github.repository }}/security/dependabot/updates
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
