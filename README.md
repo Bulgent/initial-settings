@@ -1,1 +1,3 @@
-"# initial-settings" 
+# initial-settings
+リポジトリの初期設定に使えるワークフローを用意しています。
+dependabot系はnpm前提なので適宜改良してください。
